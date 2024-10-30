@@ -29,20 +29,21 @@ function App() {
   const copyPassword = useCallback(() => {
     window.navigator.clipboard.writeText(password);
     setOldPass((prev) => [...prev, password]);
+    passwordGenerator();
   }, [password, oldPass]);
   return (
     <>
-      <h1 className="text-4xl bg-black text-center text-white py-2">
+      <h1 className="text-2xl md:text-4xl bg-black text-center text-white py-2">
         Password Generator
       </h1>
-      <div className="flex justify-center bg-black min-h-[100vh]">
+      <div className="flex justify-center bg-black min-h-[100vh] min-w-[100vw] md:w-auto">
         <div className="mt-4 ">
-          <div className=" bg-gray-600 rounded-lg p-3 ">
+          <div className=" bg-gray-600 rounded-lg p-3 mx-4 md:mx-0">
             <div className="flex ">
               <input
                 type="text"
                 value={password}
-                className="text-lg w-[100%] outline-none rounded px-2"
+                className="text-lg w-[100%] md:w-auto outline-none rounded px-2"
                 readOnly
                 ref={passRef}
               />
@@ -53,7 +54,7 @@ function App() {
                 Copy
               </button>
             </div>
-            <div className="flex text-white gap-3 ">
+            <div className="flex text-white gap-3 flex-wrap ">
               <input
                 type="range"
                 min={8}
@@ -79,9 +80,9 @@ function App() {
             </div>
           </div>
 
-          <div className="text-white bg-gray-600 rounded-xl">
+          <div className="text-white bg-gray-600 rounded-xl mx-4">
             <h1 className="text-center text-3xl mt-4">Old Passwords</h1>
-            <ul className="p-4 ">
+            <ul className="px-8 list-decimal">
               {oldPass.map((pass) => (
                 <li>{pass}</li>
               ))}
