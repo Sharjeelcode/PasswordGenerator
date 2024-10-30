@@ -81,7 +81,7 @@ function App() {
           </div>
 
           <div className="text-white bg-gray-600 rounded-xl mx-4">
-            <h1 className="text-center text-3xl mt-4">Old Passwords</h1>
+            <h1 className="text-center text-3xl pb-1 mt-4">Old Passwords</h1>
             <ul className="px-8 list-decimal">
               {oldPass.map((pass) => (
                 <li>{pass}</li>
