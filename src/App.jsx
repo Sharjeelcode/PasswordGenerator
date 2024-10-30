@@ -43,7 +43,7 @@ function App() {
               <input
                 type="text"
                 value={password}
-                className="text-lg w-[100%] md:w-auto outline-none rounded px-2"
+                className="text-lg w-[100%] lg:w-auto outline-none rounded px-2"
                 readOnly
                 ref={passRef}
               />
